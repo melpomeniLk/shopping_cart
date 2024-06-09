@@ -1,0 +1,155 @@
+.App {
+  display: flex;
+}
+
+h1, header {
+  text-align: center;
+}
+
+.products_section,
+.inventory_section {
+  width: 40%;
+  padding: 10px;
+  border: 10px double black;
+}
+
+.products_section {
+  height: 90vh;
+  overflow-y: scroll;
+}
+
+.cart_section{
+  width: 20%;
+  padding: 10px;
+  border: 10px double black;
+}
+
+.edit_form {
+  height: 60vh;
+  overflow-y: scroll;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 5px; 
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin: 10px;
+  position: relative;
+}
+
+.product img {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  max-width: 100%;
+  height: auto;
+  max-height: 140px;
+}
+
+.product h3 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  margin: 0;
+}
+
+.product span {
+  grid-column: 3 / 3;
+  grid-row: 1 / 2;
+  margin: 0;
+  text-align: right;
+}
+
+.product p {
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
+}
+
+.product button {
+  grid-column: 3 / 3;
+  grid-row: 3 / 3;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.product .unavailable  {
+  border: 1px solid black;
+  background-color: grey;
+  color: white;
+  padding: 5px;
+  cursor: not-allowed;
+}
+
+.product .unavailable::before {
+  content:"UNAVAILABLE";
+  position: absolute;
+  color: red;
+  font-size: large;
+  left: 50px;
+}
+
+.cart_product {
+  border-bottom: 1px solid grey;
+  padding: 5px;
+}
+
+form {
+  display: grid;
+  gap: 5px; 
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+
+form > div {
+  margin: 5px;
+}
+
+form button {
+  grid-column: 1 / 4;
+  padding: 5px;
+  justify-self: center;
+  width: 20%;
+}
+
+form input {
+  margin: 5px;
+}
+
+.status_field {
+  align-self: center;;
+}
+
+.description_field input {
+  width: 75%;
+}
+
+.image_field input {
+  width: 80%;
+}
+
+form .name_field {
+  grid-column: 1 / 2;
+  max-width: 100%;
+}
+
+form .price_field {
+  grid-column: 2 / 2;
+  max-width: 100%;
+}
+
+form .status_field {
+  grid-column: 3 / 4;
+  max-width: 100%;
+}
+
+form .description_field {
+  grid-column: 1 / 4;
+  grid-row: 2 / 3;
+}
+
+form .image_field {
+  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+}
