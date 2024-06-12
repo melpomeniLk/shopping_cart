@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
+import './Styles/ProductsList.css';
+import './Styles/Cart.css';
+import './Styles/FormsSection.css';
 import ProductsList from './Components/ProductsList.jsx'
 import PRODUCTS from "./Products.js";
 import Cart from './Components/Cart'
