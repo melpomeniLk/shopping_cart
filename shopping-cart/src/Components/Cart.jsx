@@ -3,6 +3,12 @@ import React, {useState, useEffect } from "react";
 const Cart = ({cart}) => {
     const [cartTotal, setCartTotal] = useState(0);
 
+    const calculateItemTotal = (price, quantity) => {
+        const itemPrice = parseFloat(price);
+        const itemTotal = itemPrice * quantity;
+        return itemTotal.toFixed(2);
+    };
+
     /* calculate the total price of cart as soon as a change is made in products of cart*/ 
     useEffect(() => {
         const totalPrice = () => {
@@ -23,7 +29,7 @@ const Cart = ({cart}) => {
             <div className="cart_list">{cart.map((item, index) => (
                 <div key={index} className="cart_product">
                     <p>{item.quantity} x {item.title}</p>
-                    <p>$ {(item.price * item.quantity).toFixed(2)}</p>
+                    <p>$ {calculateItemTotal(item.price , item.quantity)}</p>
                 </div>
             ))} </div>
             <div>

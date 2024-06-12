@@ -1,6 +1,10 @@
 import React from "react";
 
 const ProductsList = ({products ,  addToCart }) => {
+    const formatPrice = (price) => {
+        const priceFloat = parseFloat(price);
+        return priceFloat.toFixed(2);
+    };
 
     return (
         <div className="products_section">
@@ -12,7 +16,7 @@ const ProductsList = ({products ,  addToCart }) => {
                 <div className="product " key={item.id}>
                 <img src={item.image} alt="{item.title}"/>
                 <h3>{item.title}</h3>
-                <span>$ {(item.price).toFixed(2)}</span>
+                <span>$ {formatPrice(item.price)}</span>
                 <p>{item.description}</p>
                 <button className={item.status} disabled={item.status !== 'available'} onClick={() => addToCart(item)}>Add to Cart</button>
             </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Inventory({ products, updateProductList  }) {
+function Inventory({ products, updateProductList }) {
   const [productsList, setProductsList] = useState(products);
 
   useEffect(() => {
@@ -14,49 +14,49 @@ function Inventory({ products, updateProductList  }) {
   };
 
   const handleInputChange = (e, productId, field) => {
-    let newValue = e.target.value;
-    let newProductsList = [...productsList];
+    const newValue = e.target.value;
     
-    if (field === "price") {
-      newValue = parseFloat(newValue);
-    }
-
-    for( let i=0; i < newProductsList.length; i++) {
-      if(newProductsList[i].id === productId) {
-        newProductsList[i][field] = newValue;
-        break;
+    const newProductsList = productsList.map(product => {
+      if (product.id === productId) {
+        return { ...product, [field]: newValue };
+      } else {
+        return product;
       }
-    }
+    });
+
     setProductsList(newProductsList);
   };
-  
+
   return (
     <div className="edit_form">
       <header>
         <h1>INVENTORY</h1>
       </header>
       <div className="products_edit">
-        {products.map((item) => (
+        {productsList.map((item) => (
           <form key={item.id} onSubmit={(e) => handleSubmit(e, item.id)}>
             <div className="name_field">
               <label>
-              Name
-              <input
-                type="text"
-                value={item.title}
-                onChange={(e) => handleInputChange(e, item.id, "title")}
-              />
-            </label>
+                Name
+                <input
+                  type="text"
+                  value={item.title}
+                  onChange={(e) => handleInputChange(e, item.id, "title")}
+                  required
+                />
+              </label>
             </div>
             <div className="price_field">
-            <label>
-              Price
-              <input
-                type="text"
-                value={item.price}
-                onChange={(e) => handleInputChange(e, item.id, "price")}
-              />
-            </label>
+              <label>
+                Price
+                <input
+                  type="text"
+                  value={item.price}
+                  onChange={(e) => handleInputChange(e, item.id, "price")}
+                  pattern="^(?!0+$)\d*(\.\d{0,2})?$"
+                  required
+                />
+              </label>
             </div>
             <div className="status_field">
               <select
@@ -69,19 +69,20 @@ function Inventory({ products, updateProductList  }) {
               </select>
             </div>
             <div className="description_field">
-            <label>Description</label>
+              <label>Description</label>
               <textarea
                 value={item.description}
                 onChange={(e) => handleInputChange(e, item.id, "description")}
+                required
               />
-            
             </div>
             <div className="image_field">
-            <label>Image</label>
+              <label>Image</label>
               <input
                 type="text"
                 value={item.image}
                 onChange={(e) => handleInputChange(e, item.id, "image")}
+                required
               />
             </div>
             <button type="submit">Save</button>
