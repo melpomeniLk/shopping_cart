@@ -14,9 +14,6 @@ The project is structured into four main components:
 
 4. **Edit Products Form:** Administrators can edit the properties of existing products using this component.
 
-Additionally, all styling for the project is managed in a single CSS file for consistency and ease of maintenance.
-
-
 ## Data Management
 Product data is loaded from the `Products.js` file. Each product object includes an `id` property, which is passed as a prop to the `Product` component to uniquely identify each product.
 
