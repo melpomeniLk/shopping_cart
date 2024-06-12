@@ -20,6 +20,13 @@ Additionally, all styling for the project is managed in a single CSS file for co
 ## Data Management
 Product data is loaded from the `Products.js` file. Each product object includes an `id` property, which is passed as a prop to the `Product` component to uniquely identify each product.
 
+## Responsive Layout
+The project achieves responsiveness using a mobile-first approach and media queries. Each component has its own CSS file with styles adjusted for different screen sizes.
+The overall layout of the three sections is defined in the App.css file. The project has been tested on the following main resolutions:
+Desktop: 1920 x 1080
+Mobile: 375 x 667
+Tablet: 829 x 1180
+
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

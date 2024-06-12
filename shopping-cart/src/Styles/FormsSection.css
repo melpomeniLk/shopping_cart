@@ -2,29 +2,15 @@
 form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto auto auto;
   gap: 5px;
   padding: 5px;
   border: 1px solid #ccc;
   margin: 10px;
 }
 
-form>div {
+form > div {
   margin: 5px;
-}
-
-form button {
-  padding: 5px;
-  grid-column: 2;
-  width: 100%;
-}
-
-.description_field input {
-  width: 75%;
-}
-
-.image_field input {
-  width: 80%;
 }
 
 form input,
@@ -53,18 +39,17 @@ form label {
 
 form .name_field {
   grid-column: 1 / 4;
-  grid-row: 1 / 2;
+  grid-row: 1;
 }
 
 form .price_field {
   grid-column: 1 / 2;
-  grid-row: 2 / 2;
-  justify-self: end;
+  grid-row: 2;
 }
 
 form .status_field {
   grid-column: 2 / 4;
-  grid-row: 2 / 2;
+  grid-row: 2;
 }
 
 form .description_field {
@@ -75,25 +60,25 @@ form .image_field {
   grid-column: 1 / 4;
 }
 
-@media screen and (min-width: 1024px) {
+form button {
+  padding: 5px;
+  grid-column: 2;
+}
+
+@media screen and (min-width: 1200px) {
 
   .edit_form {
     height: 60vh;
     overflow-y: scroll;
   }
 
-  .product .unavailable::before {
-    left: 50px;
-  }
-
   form {
-    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
   }
 
-  form button {
-    grid-column: 1 / 4;
-    justify-self: center;
-    width: 20%;
+  .name_field input {
+    width: 50%;
   }
 
   .description_field textarea {
@@ -106,29 +91,35 @@ form .image_field {
 
   form .name_field {
     grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    max-width: 100%;
+    grid-row: 1;
   }
 
   form .price_field {
-    grid-column: 2 / 2;
-    grid-row: 1 / 2;
-    max-width: 100%;
+    grid-column: 2 / 3;
+    grid-row: 1;
+    text-align: center;
   }
 
   form .status_field {
     grid-column: 3 / 4;
-    grid-row: 1 / 2;
-    max-width: 100%;
+    grid-row: 1 ;
+    text-align: center;
   }
 
   form .description_field {
     grid-column: 1 / 4;
-    grid-row: 2 / 3;
+    grid-row: 2;
   }
 
   form .image_field {
     grid-column: 1 / 4;
-    grid-row: 3 / 4;
+    grid-row: 3;
+  }
+
+  form button {
+    grid-column: 1 / 4;
+    grid-row: 4;
+    justify-self: center;
+    width: 20%;
   }
 }
