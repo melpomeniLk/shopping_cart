@@ -56,7 +56,11 @@ function AddNewProduct({ addProduct }) {
           </label>
         </div>
         <div className="status_field">
-          <select name="Status">
+          <select 
+             name="Status"
+             value={status}
+             onChange={(e) => setStatus(e.target.value)}
+             >
             <option value="available">Available</option>
             <option value="unavailable">Unavailable</option>
           </select>
