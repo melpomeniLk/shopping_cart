@@ -22,12 +22,12 @@ header {
     flex-direction: row;
   }
 
-  .products_section,
+  /* .products_section,
   .inventory_section,
   .cart_section {
     height: 90vh;
-    overflow-y: scroll;
-  }
+    overflow-y: auto;
+  } */
 
   .products_section,
   .inventory_section {
