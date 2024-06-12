@@ -14,7 +14,7 @@ const ProductsList = ({products ,  addToCart }) => {
                 <h3>{item.title}</h3>
                 <span>$ {(item.price).toFixed(2)}</span>
                 <p>{item.description}</p>
-                <button className={item.status} onClick={() => addToCart(item)}>Add to Cart</button>
+                <button className={item.status} disabled={item.status !== 'available'} onClick={() => addToCart(item)}>Add to Cart</button>
             </div>
             ))} </div>
         </div>

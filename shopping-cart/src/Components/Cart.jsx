@@ -22,9 +22,8 @@ const Cart = ({cart}) => {
             </header>
             <div className="cart_list">{cart.map((item, index) => (
                 <div key={index} className="cart_product">
-                    <span>{item.quantity} x </span>
-                    <span>{item.title} </span>
-                    <span>$ {(item.price * item.quantity).toFixed(2)}</span>
+                    <p>{item.quantity} x {item.title}</p>
+                    <p>$ {(item.price * item.quantity).toFixed(2)}</p>
                 </div>
             ))} </div>
             <div>

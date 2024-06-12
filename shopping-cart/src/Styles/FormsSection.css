@@ -1,0 +1,134 @@
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+
+form>div {
+  margin: 5px;
+}
+
+form button {
+  padding: 5px;
+  grid-column: 2;
+  width: 100%;
+}
+
+.description_field input {
+  width: 75%;
+}
+
+.image_field input {
+  width: 80%;
+}
+
+form input,
+form textarea,
+form select,
+form label {
+  margin: 5px;
+  vertical-align: middle;
+}
+
+.status_field {
+  align-self: center;
+}
+
+.price_field input {
+  width: 25%;
+}
+
+.description_field textarea {
+  width: 95%;
+}
+
+.image_field input {
+  width: 95%;
+}
+
+form .name_field {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+}
+
+form .price_field {
+  grid-column: 1 / 2;
+  grid-row: 2 / 2;
+  justify-self: end;
+}
+
+form .status_field {
+  grid-column: 2 / 4;
+  grid-row: 2 / 2;
+}
+
+form .description_field {
+  grid-column: 1 / 4;
+}
+
+form .image_field {
+  grid-column: 1 / 4;
+}
+
+@media screen and (min-width: 1024px) {
+
+  .edit_form {
+    height: 60vh;
+    overflow-y: scroll;
+  }
+
+  .product .unavailable::before {
+    left: 50px;
+  }
+
+  form {
+    display: grid;
+  }
+
+  form button {
+    grid-column: 1 / 4;
+    justify-self: center;
+    width: 20%;
+  }
+
+  .description_field textarea {
+    width: 84%;
+  }
+
+  .image_field input {
+    width: 89%;
+  }
+
+  form .name_field {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    max-width: 100%;
+  }
+
+  form .price_field {
+    grid-column: 2 / 2;
+    grid-row: 1 / 2;
+    max-width: 100%;
+  }
+
+  form .status_field {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    max-width: 100%;
+  }
+
+  form .description_field {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+  }
+
+  form .image_field {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+  }
+}

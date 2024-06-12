@@ -59,8 +59,7 @@ function AddNewProduct( {addProduct}) {
       </div>
       <div className="description_field">
       <label>Description</label>
-        <input 
-          type="textarea" 
+        <textarea 
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />

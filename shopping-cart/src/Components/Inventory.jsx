@@ -70,8 +70,7 @@ function Inventory({ products, updateProductList  }) {
             </div>
             <div className="description_field">
             <label>Description</label>
-              <input
-              type="textarea" 
+              <textarea
                 value={item.description}
                 onChange={(e) => handleInputChange(e, item.id, "description")}
               />

@@ -1,0 +1,10 @@
+.cart_product {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+  padding: 5px;
+}
+
+.cart_section h4 {
+  text-align: right;
+}

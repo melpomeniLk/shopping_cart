@@ -1,0 +1,76 @@
+.product {
+  display: grid;
+  border: 1px solid #ccc;
+  gap: 5px;
+  margin: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product .unavailable {
+  cursor: not-allowed;
+}
+
+.product .unavailable::before {
+  content: "UNAVAILABLE";
+  position: absolute;
+  color: red;
+  font-size: large;
+  left: 10px;
+}
+
+.product button {
+  cursor: pointer;
+  width: 50%;
+  justify-self: right;
+}
+
+
+@media screen and (min-width: 1024px) {
+
+  .product {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .product img {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    max-height: 140px;
+  }
+
+  .product h3 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin: 0;
+  }
+
+  .product span {
+    grid-column: 3 / 3;
+    grid-row: 1 / 2;
+    margin: 0;
+    text-align: right;
+  }
+
+  .product p {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+  }
+
+  .product button {
+    grid-column: 3 / 3;
+    grid-row: 3 / 3;
+    padding: 5px;
+    width: unset;
+    justify-self: unset;
+  }
+
+  .product .unavailable::before {
+    left: 50px;
+  }
+}
